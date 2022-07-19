@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Header from '../components/Header';
+import Sidebar from '../components/Sidebar';
 
 const Home = () => {
   return (
@@ -13,7 +14,12 @@ const Home = () => {
 
       <Header />
 
-      <main></main>
+      <main className='flex bg-gray-100'>
+        {/* Left Sidebar */}
+        <Sidebar />
+        {/* Feed (Create post and list of all posts) */}
+        {/* Right Sidebar */}
+      </main>
     </div>
   );
 };
