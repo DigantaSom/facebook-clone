@@ -18,6 +18,7 @@ client/build
 # misc
 .DS_Store
 client/*.pem
+zz-helper.txt
 
 # debug
 client/npm-debug.log*
