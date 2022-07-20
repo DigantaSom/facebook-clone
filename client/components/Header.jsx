@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { useSession, signOut } from 'next-auth/react';
 
 import { HiOutlineSearch, HiOutlineHome } from 'react-icons/hi';
 import { RiFlag2Line } from 'react-icons/ri';
@@ -8,6 +9,9 @@ import { IoGameControllerOutline } from 'react-icons/io5';
 import { CgMenuGridO } from 'react-icons/cg';
 
 const Header = () => {
+  const { data: session } = useSession();
+  // console.log(session);
+
   return (
     <div className='bg-white flex items-center p-2 shadow-md sticky top-0 z-50 h-16'>
       {/* Left */}
@@ -50,13 +54,15 @@ const Header = () => {
       {/* Right */}
       <div className='flex items-center justify-end min-w-fit space-x-2'>
         <Image
-          src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/2021_Facebook_icon.svg/800px-2021_Facebook_icon.svg.png'
+          src={session?.user?.image}
           alt='Facebook'
           width={40}
           height={40}
+          className='rounded-full cursor-pointer'
+          onClick={signOut}
         />
         <p className='hidden xl:inline-flex font-semibold text-sm whitespace-nowrap p-3 max-w-xs'>
-          Diganta
+          {session?.user?.name.split(' ')[0].trim()}
         </p>
         <CgMenuGridO
           size={20}

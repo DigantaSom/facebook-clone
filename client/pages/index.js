@@ -1,9 +1,14 @@
 import Head from 'next/head';
+import { getSession } from 'next-auth/react';
 
+import Login from '../components/Login';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 
-const Home = () => {
+const Home = ({ session }) => {
+  if (!session) {
+    return <Login />;
+  }
   return (
     <div>
       <Head>
@@ -17,11 +22,19 @@ const Home = () => {
       <main className='flex bg-gray-100'>
         {/* Left Sidebar */}
         <Sidebar />
-        {/* Feed (Create post and list of all posts) */}
-        {/* Right Sidebar */}
+        {/* TODO: Feed (Create post and list of all posts) */}
+        {/* TODO: Right Sidebar */}
       </main>
     </div>
   );
 };
 
 export default Home;
+
+export const getServerSideProps = async context => {
+  const session = await getSession(context);
+
+  return {
+    props: { session },
+  };
+};
