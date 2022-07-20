@@ -16,9 +16,7 @@ const Post = () => {
           />
           <div>
             <p className='font-medium'>Diganta Som</p>
-            <p className='text-xs text-gray-500'>
-              {new Date().toLocaleString()}
-            </p>
+            <p className='text-xs text-gray-500'>Date</p>
           </div>
         </div>
         <p className='pt-4 pb-1'>

@@ -5,6 +5,7 @@ import Login from '../components/Login';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
 import Feed from '../components/Feed';
+import RightSidebar from '../components/RightSidebar';
 
 const Home = ({ session }) => {
   if (!session) {
@@ -23,7 +24,7 @@ const Home = ({ session }) => {
       <main className='flex bg-gray-100'>
         <Sidebar />
         <Feed />
-        {/* TODO: Right Sidebar */}
+        <RightSidebar />
       </main>
     </div>
   );
