@@ -4,6 +4,7 @@ import { getSession } from 'next-auth/react';
 import Login from '../components/Login';
 import Header from '../components/Header';
 import Sidebar from '../components/Sidebar';
+import Feed from '../components/Feed';
 
 const Home = ({ session }) => {
   if (!session) {
@@ -20,9 +21,8 @@ const Home = ({ session }) => {
       <Header />
 
       <main className='flex bg-gray-100'>
-        {/* Left Sidebar */}
         <Sidebar />
-        {/* TODO: Feed (Create post and list of all posts) */}
+        <Feed />
         {/* TODO: Right Sidebar */}
       </main>
     </div>
