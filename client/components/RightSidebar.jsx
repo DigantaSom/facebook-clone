@@ -23,7 +23,7 @@ const RightSidebar = () => {
       </div>
       <Contacts
         name='Master Yoda'
-        src='https://images.pexels.com/photos/2050979/pexels-photo-2050979.jpeg?auto=compress&cs=tinysrgb&w=800'
+        src='https://images.pexels.com/photos/7499839/pexels-photo-7499839.jpeg?auto=compress&cs=tinysrgb&w=800'
         status='Online'
       />
       <Contacts
@@ -33,7 +33,7 @@ const RightSidebar = () => {
       />
       <Contacts
         name='Anakin Skywalker'
-        src='https://images.pexels.com/photos/39866/entrepreneur-startup-start-up-man-39866.jpeg?auto=compress&cs=tinysrgb&w=800'
+        src='https://images.pexels.com/photos/9482193/pexels-photo-9482193.jpeg?auto=compress&cs=tinysrgb&w=800'
         status='Online'
       />
       <Contacts
