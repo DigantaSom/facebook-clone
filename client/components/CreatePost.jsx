@@ -1,12 +1,15 @@
 import { useRef, useState } from 'react';
 import Image from 'next/image';
 import { useSession } from 'next-auth/react';
+import { useDispatch } from 'react-redux';
 import axios from 'axios';
 
 import { HiOutlineVideoCamera } from 'react-icons/hi';
 import { IoMdPhotos } from 'react-icons/io';
 import { BsEmojiSmile } from 'react-icons/bs';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+
+import { addPost } from '../public/src/features/postSlice';
 
 const CreatePost = () => {
   const FACEBOOK_CLONE_ENDPOINT = '';
@@ -15,6 +18,7 @@ const CreatePost = () => {
   const inputRef = useRef(null);
   const hiddenFileInput = useRef(null);
   const [imageToPost, setImageToPost] = useState(null);
+  const dispatch = useDispatch();
 
   const handleClickFileButton = () => {
     hiddenFileInput.current.click();
@@ -49,10 +53,11 @@ const CreatePost = () => {
     formData.append('profilePic', session?.user?.image);
 
     try {
-      await axios.post(FACEBOOK_CLONE_ENDPOINT, formData, {
+      const response = await axios.post(FACEBOOK_CLONE_ENDPOINT, formData, {
         headers: { Accept: 'application/json' },
       });
       inputRef.current.value = '';
+      dispatch(addPost(response.data));
       removeImage();
     } catch (err) {
       console.log('Error creating post:', err);
