@@ -1,5 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
+# ----------------- Frontend -----------------
+
 # dependencies
 client/node_modules
 client/.pnp
@@ -31,3 +33,40 @@ client/.env*.local
 
 # vercel
 client/.vercel
+
+
+# ----------------- Backend -----------------
+
+facebook-clone-service/HELP.md
+facebook-clone-service/target/
+facebook-clone-service/!.mvn/wrapper/maven-wrapper.jar
+facebook-clone-service/!**/src/main/**/target/
+facebook-clone-service/!**/src/test/**/target/
+
+### STS ###
+facebook-clone-service/.apt_generated
+facebook-clone-service/.classpath
+facebook-clone-service/.factorypath
+facebook-clone-service/.project
+facebook-clone-service/.settings
+facebook-clone-service/.springBeans
+facebook-clone-service/.sts4-cache
+
+### IntelliJ IDEA ###
+facebook-clone-service/.idea
+facebook-clone-service/*.iws
+facebook-clone-service/*.iml
+facebook-clone-service/*.ipr
+
+### NetBeans ###
+facebook-clone-service/nbproject/private/
+facebook-clone-service/nbbuild/
+facebook-clone-service/dist/
+facebook-clone-service/nbdist/
+facebook-clone-service/.nb-gradle/
+facebook-clone-service/build/
+facebook-clone-service/!**/src/main/**/build/
+facebook-clone-service/!**/src/test/**/build/
+
+### VS Code ###
+.vscode/
