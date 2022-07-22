@@ -5,6 +5,7 @@ import com.digantasom.facebookclone.service.PostService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @CrossOrigin(value = "http://localhost:3000")
@@ -13,11 +14,13 @@ import java.util.Map;
 public class PostController {
   private PostService postService;
 
+  public PostController() {}
+
   public PostController(PostService postService) {
     this.postService = postService;
   }
 
-  @PostMapping("")
+  @PostMapping
   public Post addPost(@RequestParam Map<String, String> requestParams) throws Exception {
     String strPost = requestParams.get("post");
     String name = requestParams.get("name");
@@ -36,5 +39,10 @@ public class PostController {
 
     post = postService.addPost(post);
     return post;
+  }
+
+  @GetMapping
+  List<Post> getPosts() {
+    return postService.getPosts();
   }
 }
