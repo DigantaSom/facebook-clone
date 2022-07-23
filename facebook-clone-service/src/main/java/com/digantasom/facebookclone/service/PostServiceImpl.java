@@ -4,11 +4,12 @@ import com.digantasom.facebookclone.entity.PostEntity;
 import com.digantasom.facebookclone.model.Post;
 import com.digantasom.facebookclone.repository.PostEntityRepository;
 import org.springframework.beans.BeanUtils;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+@Service
 public class PostServiceImpl implements PostService {
   private PostEntityRepository postEntityRepository;
 

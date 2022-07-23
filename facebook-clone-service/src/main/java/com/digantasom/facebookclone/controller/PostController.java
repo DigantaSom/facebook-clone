@@ -14,8 +14,6 @@ import java.util.Map;
 public class PostController {
   private PostService postService;
 
-  public PostController() {}
-
   public PostController(PostService postService) {
     this.postService = postService;
   }

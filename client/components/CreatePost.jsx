@@ -12,7 +12,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { addPost } from '../public/src/features/postSlice';
 
 const CreatePost = () => {
-  const FACEBOOK_CLONE_ENDPOINT = '';
+  const FACEBOOK_CLONE_ENDPOINT = 'http://localhost:8080/api/v1/post';
 
   const { data: session } = useSession();
   const inputRef = useRef(null);
